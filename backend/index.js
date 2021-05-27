@@ -19,10 +19,18 @@ app.get("/", (req, res) => {
 
 // client connection on IO instance
 io.on("connection", (socket) => {
-  console.log("User has connected!");
+  socket.emit("message", "Welcome to Elokint");
+  // broadcast an user connection (avoid the notification for the user connecting)
+  socket.broadcast.emit("message", "User has joined");
   // check for disconnects
   socket.on("disconnect", () => {
-    console.log("User has disconnected!");
+    // send message to all the clients when an user disconnects
+    io.emit("message", "User left the chat");
+  });
+
+  socket.on("chatMessage", (msg) => {
+    //catch chat message from client and send to all other clients
+    io.emit("message", msg);
   });
 });
 
