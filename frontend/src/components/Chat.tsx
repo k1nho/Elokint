@@ -6,14 +6,17 @@ const socket = io("http://localhost:4000", {transports : ["websocket"]});
 const Chat : React.FC = () => {
     const [message, setMessage] = useState("");
     const[chatLog, setChatLog] =  useState<JSX.Element[]>([])
-
+    const [user , setUser] =  useState("kin");
     
-    
-
     function handleMessage(msg:string){
        const userMessage = React.createElement("p", {className: "bg-yellow-600 rounded-md text-base  text-white p-2"}, `${msg}`);
        setChatLog(chatLog => [...chatLog, userMessage]);
 
+          // handle scrolling to the bottom automatically on message
+          let chatWindow = document.querySelector("#chat-window");
+          if(chatWindow !== null){
+            chatWindow.scrollTop = chatWindow.scrollHeight - chatWindow.clientHeight
+          }
     }
 
     useEffect(() => {
@@ -31,7 +34,7 @@ const Chat : React.FC = () => {
     }
 
     return (
-        <div className = "h-screen bg-white flex flex-col items-center justify-center">
+        <div className = "min-h-screen bg-white flex flex-col items-center justify-center">
             <div className ="bg-gray-900 w-9/12 flex items-center space-x-4 rounded-t-xl">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -48,9 +51,9 @@ const Chat : React.FC = () => {
 
                 </div>
                 
-                <div className = "bg-gray-800 flex flex-1 overflow-y-scroll flex-col" id ="chat-window">
+                <div className = "bg-gray-800 flex flex-1 overflow-y-scroll flex-col no-scrollbar" id ="chat-window">
                    {chatLog.map((chatmsg, index) =>{
-                      return <div key ={index} className="flex flex-wrap mx-4 my-3">{chatmsg}</div> 
+                      return <div key ={index} className="flex flex-wrap mx-4 my-3 self-end">{chatmsg}</div> 
                    })} 
                 </div>
 
