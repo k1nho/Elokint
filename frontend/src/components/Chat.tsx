@@ -1,11 +1,37 @@
-import React from 'react'
-import io from "socket.io-client"
+import React, { useEffect, useState } from 'react';
+import io from "socket.io-client";
 
-const socket = io("http://localhost:4000", {transports : ["websocket"]})
+const socket = io("http://localhost:4000", {transports : ["websocket"]});
 
 const Chat : React.FC = () => {
+    const [message, setMessage] = useState("");
+    const[chatLog, setChatLog] =  useState<JSX.Element[]>([])
+
+    
+    
+
+    function handleMessage(msg:string){
+       const userMessage = React.createElement("p", {className: "bg-yellow-600 rounded-md text-base  text-white p-2"}, `${msg}`);
+       setChatLog(chatLog => [...chatLog, userMessage]);
+
+    }
+
+    useEffect(() => {
+    // catch server message on login
+    socket.on("message", message =>{
+        handleMessage(message)
+    })
+    }, [])
+
+    const handleSubmit = (e :React.FormEvent) =>{
+        e.preventDefault();
+        //send chat message of an user to the server
+        socket.emit("chatMessage", message)
+        setMessage("");
+    }
+
     return (
-        <div className = "min-h-screen bg-white flex flex-col items-center justify-center">
+        <div className = "h-screen bg-white flex flex-col items-center justify-center">
             <div className ="bg-gray-900 w-9/12 flex items-center space-x-4 rounded-t-xl">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -17,22 +43,30 @@ const Chat : React.FC = () => {
                 </svg>
                 <h1 className ="text-2xl font-elokint font-bold tracking-widest uppercase text-yellow-500">Elokint Chat</h1>
             </div>
-            <div className = "flex flex-row w-9/12"> 
+            <div className = "flex flex-row w-9/12 h-96"> 
                 <div className = "bg-gray-700 w-3/12 text-white">
 
                 </div>
-                <div className = "bg-gray-800 flex flex-1"> is chat feed</div>
+                
+                <div className = "bg-gray-800 flex flex-1 overflow-y-scroll flex-col" id ="chat-window">
+                   {chatLog.map((chatmsg, index) =>{
+                      return <div key ={index} className="flex flex-wrap mx-4 my-3">{chatmsg}</div> 
+                   })} 
+                </div>
+
             </div>
             <div className ="bg-gray-900 w-9/12 rounded-b-xl"> 
-                <form className= "flex items-center my-4 mx-4 space-x-2">
+                <form id = "chat-form" onSubmit= {handleSubmit} className= "flex items-center my-4 mx-4 space-x-2">
                                   
                         <input
                             id = "msg"
                             type="text"
                             placeholder="Enter Message"
+                            value = {message}
+                            onChange = {(e)=>setMessage(e.currentTarget.value)}
                             className=" w-full  px-4 py-2 rounded-md outline-none focus:ring-2 focus:ring-yellow-500 font-body"/>
                     
-                                  <button className=" bg-yellow-500 text-white font-bold font-body  rounded-md px-4 py-2 uppercase text-sm hover:bg-yellow-600 flex items-center space-x-1 transition duration-300 ease-in-out" type= "submit">
+                                  <button className=" bg-yellow-500 text-white font-bold font-body  rounded-md px-4 py-2 uppercase text-sm hover:bg-yellow-600 flex items-center space-x-1 transition duration-300 ease-in-out" type= "submit" >
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                    </svg>
