@@ -18,18 +18,29 @@ const Login: React.FC = () => {
           </div>
           <div className="flex flex-col items-center ">
             <form className=" flex flex-col items-center rounded-xl space-y-8">
-              <input
-                className="px-4 py-2 rounded-md outline-none focus:ring-2 focus:ring-yellow-500 font-body"
-                id="username"
-                placeholder="Enter Username"
-                type="text"
-              />
-              <input
-                className="px-4 py-2 rounded-md outline-none focus:ring-2 focus:ring-yellow-500 font-body"
-                id="password"
-                placeholder="Enter Password"
-                type="text"
-              />
+              <div className="flex flex-col space-y-2 justify-center">
+                <label htmlFor="" className="text-yellow-500 text-md">
+                  Username
+                </label>
+                <input
+                  className="px-4 py-2 rounded-md outline-none focus:ring-2 focus:ring-yellow-500 font-body"
+                  id="username"
+                  placeholder="Enter Username"
+                  type="text"
+                />
+              </div>
+              <div className="flex flex-col space-y-2 justify-center">
+                <label htmlFor="" className="text-yellow-500 text-md">
+                  Password
+                </label>
+                <input
+                  className="px-4 py-2 rounded-md outline-none focus:ring-2 focus:ring-yellow-500 font-body"
+                  id="password"
+                  placeholder="Enter Password"
+                  type="password"
+                />
+              </div>
+
               <button
                 className="bg-yellow-500 text-white font-bold font-body  rounded-md px-4 py-3 uppercase text-sm hover:bg-yellow-600 flex items-center space-x-1 transition duration-300 ease-in-out"
                 type="submit"
