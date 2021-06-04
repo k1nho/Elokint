@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
 
-const Friendslist: React.FC = () => {
-    return (
-        <div>
-            This is friends list component            
-        </div>
-    )
+interface Iprops {
+  Props?: any;
+  authSetter: (isUserAuth: boolean) => void;
 }
 
-export default Friendslist
+const Friendslist: React.FC<Iprops> = () => {
+  return <div>This is friends list component</div>;
+};
+
+export default Friendslist;

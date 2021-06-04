@@ -1,6 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Register: React.FC = () => {
+interface Iprops {
+  Props?: any;
+  authSetter: (isUserAuth: boolean) => void;
+}
+
+interface RegisterUser {
+  username: string;
+  email: string;
+  password: string;
+}
+
+const Register: React.FC<Iprops> = ({ authSetter }) => {
+  const [inputs, setInputs] = useState<RegisterUser>({
+    username: "",
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputs({ ...inputs, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    try {
+      const { username, email, password } = { ...inputs };
+      const body = { username, email, password };
+
+      const response = await fetch("/auth/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+
+      const parseResponse = await response.json();
+
+      if (parseResponse.jwtToken) {
+        localStorage.setItem("token", parseResponse.jwtToken);
+        authSetter(true);
+      } else {
+        authSetter(false);
+      }
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-gray-900">
       <div className="hidden sm:flex sm:items-center sm:justify-center">
@@ -160,7 +207,10 @@ const Register: React.FC = () => {
             </div>
           </div>
           <div className="flex flex-col items-center">
-            <form className=" flex flex-col items-center rounded-xl space-y-8">
+            <form
+              className=" flex flex-col items-center rounded-xl space-y-8"
+              onSubmit={handleSubmit}
+            >
               <div className="flex flex-col space-y-2 justify-center">
                 <label htmlFor="" className="text-yellow-500 text-md">
                   Username
@@ -168,8 +218,25 @@ const Register: React.FC = () => {
                 <input
                   className="px-4 py-2 rounded-md outline-none focus:ring-2 focus:ring-yellow-500 font-body"
                   id="username"
+                  name="username"
+                  value={inputs.username}
                   placeholder="Enter Username"
                   type="text"
+                  onChange={(e) => handleChange(e)}
+                />
+              </div>
+              <div className="flex flex-col space-y-2 justify-center">
+                <label htmlFor="" className="text-yellow-500 text-md">
+                  Email
+                </label>
+                <input
+                  className="px-4 py-2 rounded-md outline-none focus:ring-2 focus:ring-yellow-500 font-body"
+                  id="email"
+                  name="email"
+                  value={inputs.email}
+                  placeholder="Enter Username"
+                  type="text"
+                  onChange={(e) => handleChange(e)}
                 />
               </div>
               <div className="flex flex-col space-y-2 justify-center">
@@ -179,8 +246,11 @@ const Register: React.FC = () => {
                 <input
                   className="px-4 py-2 rounded-md outline-none focus:ring-2 focus:ring-yellow-500 font-body"
                   id="password"
+                  name="password"
+                  value={inputs.password}
                   placeholder="Enter Password"
                   type="password"
+                  onChange={(e) => handleChange(e)}
                 />
               </div>
               <button
