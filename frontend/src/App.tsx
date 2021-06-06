@@ -14,6 +14,8 @@ import NavBar from "./components/NavBar";
 import Login from "./components/userAuth/Login";
 import Register from "./components/userAuth/Register";
 
+toast.configure();
+
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
