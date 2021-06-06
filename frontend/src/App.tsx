@@ -5,6 +5,8 @@ import {
   Route,
   Switch,
 } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Chat from "./components/Chat";
 import Friendslist from "./components/Friendslist";
 import Home from "./components/Home";
@@ -45,6 +47,7 @@ function App() {
   const logout = () => {
     localStorage.removeItem("token");
     setAuth(false);
+    toast.success("Logged Out Successfully");
   };
 
   return (
