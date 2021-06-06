@@ -25,7 +25,6 @@ const Login: React.FC<Iprops> = ({ authSetter }) => {
 
     try {
       const body = { ...inputs };
-      console.log(body);
 
       const response = await fetch("/auth/login", {
         method: "POST",
