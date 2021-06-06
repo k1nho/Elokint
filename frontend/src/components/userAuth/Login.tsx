@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 interface Iprops {
   Props?: any;
@@ -37,8 +38,10 @@ const Login: React.FC<Iprops> = ({ authSetter }) => {
       if (parseResponse.jwtToken) {
         localStorage.setItem("token", parseResponse.jwtToken);
         authSetter(true);
+        toast.success("You Have Logged in Successfully");
       } else {
         authSetter(false);
+        toast.error(parseResponse);
       }
     } catch (err) {
       console.error(err.message);
