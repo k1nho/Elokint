@@ -107,7 +107,7 @@ const Chat: React.FC<Iprops> = () => {
               >
                 {user === chatmsg.username ? (
                   <div className="flex flex-wrap mx-4 my-3 w-64">
-                    <p className="bg-green-600 rounded-md text-sm  text-white p-2 flex flex-col w-full">
+                    <p className="bg-green-600 rounded-l-md rounded-tr-md text-sm  text-white p-2 flex flex-col w-full">
                       <span className="text-md text-gray-700 font-bold">
                         {chatmsg.username}
                       </span>
@@ -119,7 +119,7 @@ const Chat: React.FC<Iprops> = () => {
                   </div>
                 ) : (
                   <div className="flex flex-wrap mx-4 my-3 w-64">
-                    <p className="bg-yellow-600 rounded-md text-sm  text-white p-2 flex flex-col w-full self-start">
+                    <p className="bg-yellow-600 rounded-r-md rounded-tl-md text-sm  text-white p-2 flex flex-col w-full self-start ">
                       <span className="text-md text-gray-700 font-bold">
                         {chatmsg.username}
                       </span>
