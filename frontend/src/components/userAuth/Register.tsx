@@ -237,7 +237,7 @@ const Register: React.FC<Iprops> = ({ authSetter }) => {
                   id="email"
                   name="email"
                   value={inputs.email}
-                  placeholder="Enter Username"
+                  placeholder="Enter Email"
                   type="text"
                   onChange={(e) => handleChange(e)}
                 />
