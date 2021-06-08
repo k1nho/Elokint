@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Chat from "./components/Chat";
+import Chat from "./components/chat/Chat";
 import Friendslist from "./components/Friendslist";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
