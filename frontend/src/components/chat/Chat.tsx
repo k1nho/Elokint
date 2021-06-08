@@ -33,9 +33,19 @@ const Chat: React.FC<Iprops> = () => {
     }
   };
 
+  // on first render get the user and chat history if needed
   useEffect(() => {
     getUser();
+    const chatHistory = localStorage.getItem("chat-history");
+    if (chatHistory !== null) {
+      setChatLog(JSON.parse(chatHistory));
+    }
   }, []);
+
+  // save chatLog on localstorage
+  useEffect(() => {
+    localStorage.setItem("chat-history", JSON.stringify(chatLog));
+  });
 
   function handleMessage(message: Message) {
     setChatLog((chatLog) => [...chatLog, message]);
