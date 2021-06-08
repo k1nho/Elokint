@@ -48,6 +48,7 @@ function App() {
   // Function to log out an user pass to navbar to display the button
   const logout = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("chat-history");
     setAuth(false);
     toast.success("Logged Out Successfully");
   };
