@@ -78,8 +78,8 @@ const Chat: React.FC<Iprops> = () => {
 
   return (
     <div className="min-h-screen bg-white flex flex-col items-center justify-center">
-      <div className="bg-gray-900 w-9/12 flex items-center justify-between rounded-t-xl">
-        <div className="flex items-center space-x-4 ">
+      <div className="bg-gray-900 w-9/12 flex items-center justify-between rounded-t-xl border-b-2  border-white">
+        <div className="flex items-center space-x-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-14 p-1 ml-4 my-2 bg-gray-700 rounded-full"
@@ -100,10 +100,50 @@ const Chat: React.FC<Iprops> = () => {
         </div>
       </div>
       <div className="flex flex-row w-9/12 h-96">
-        <div className="bg-gray-700 w-3/12 text-white">Groups</div>
+        <div className="bg-gray-800 w-3/12 text-white  flex flex-col items-center">
+          <h1 className="text-lg text-yellow-600 font-body font-semibold mt-2">
+            Rooms
+          </h1>
+          <div className=" space-y-4 p-4 flex flex-col self-start">
+            <button className="bg-gray-700 rounded-lg py-3 px-16 hover:bg-gray-600 transition duration-300 ease-in-out flex items-center text-md space-x-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"
+                />
+              </svg>
+              General
+            </button>
+            <button className="bg-gray-700 rounded-lg py-3 px-16 hover:bg-gray-600 transition duration-300 ease-in-out flex items-center text-md">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"
+                />
+              </svg>
+              Game
+            </button>
+          </div>
+        </div>
 
         <div
-          className="bg-gray-800 flex flex-1 overflow-y-scroll flex-col no-scrollbar"
+          className="bg-gray-900 flex flex-1 overflow-y-scroll flex-col no-scrollbar"
           id="chat-window"
         >
           {chatLog.map((chatmsg, index) => {
@@ -136,7 +176,7 @@ const Chat: React.FC<Iprops> = () => {
           })}
         </div>
       </div>
-      <div className="bg-gray-900 w-9/12 rounded-b-xl">
+      <div className="bg-gray-900 w-9/12 rounded-b-xl ">
         <form
           id="chat-form"
           onSubmit={handleSubmit}
