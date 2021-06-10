@@ -76,9 +76,13 @@ const Chat: React.FC<Iprops> = () => {
     }
   };
 
+  const joinRoom = (e: React.MouseEvent<HTMLButtonElement>) => {
+    console.log(e.currentTarget.value);
+  };
+
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center justify-center">
-      <div className="bg-gray-900 w-9/12 flex items-center justify-between rounded-t-xl border-b-2  border-white">
+    <div className="min-h-screen bg-elokint-light-black flex flex-col items-center justify-center">
+      <div className="bg-elokint-black w-9/12 flex items-center justify-between rounded-t-xl border-2  border-black">
         <div className="flex items-center space-x-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -100,12 +104,16 @@ const Chat: React.FC<Iprops> = () => {
         </div>
       </div>
       <div className="flex flex-row w-9/12 h-96">
-        <div className="bg-gray-800 w-3/12 text-white  flex flex-col items-center">
-          <h1 className="text-lg text-yellow-600 font-body font-semibold mt-2">
+        <div className="bg-elokint-black w-3/12 text-white  flex flex-col items-center border-r-2 border-l-2 border-black">
+          <h1 className="text-lg text-yellow-500 font-elokint font-semibold mt-2">
             Rooms
           </h1>
-          <div className=" space-y-4 p-4 flex flex-col self-start">
-            <button className="bg-gray-700 rounded-lg py-3 px-16 hover:bg-gray-600 transition duration-300 ease-in-out flex items-center text-md space-x-1">
+          <div className=" space-y-4 p-4 flex flex-col font-body">
+            <button
+              className="bg-gray-700 rounded-lg py-3 xl:px-16 lg:px-12 px-10 hover:bg-gray-600 transition duration-300 ease-in-out flex items-center text-md space-x-1 focus:outline-none"
+              value="general"
+              onClick={joinRoom}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -122,7 +130,11 @@ const Chat: React.FC<Iprops> = () => {
               </svg>
               General
             </button>
-            <button className="bg-gray-700 rounded-lg py-3 px-16 hover:bg-gray-600 transition duration-300 ease-in-out flex items-center text-md">
+            <button
+              className="bg-gray-700 rounded-lg py-3 xl:px-16 lg:px-12 px-10 hover:bg-gray-600 transition duration-300 ease-in-out flex items-center text-md focus:outline-none"
+              value="game"
+              onClick={joinRoom}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -143,7 +155,7 @@ const Chat: React.FC<Iprops> = () => {
         </div>
 
         <div
-          className="bg-gray-900 flex flex-1 overflow-y-scroll flex-col no-scrollbar"
+          className="bg-elokint-black flex flex-1 overflow-y-scroll flex-col no-scrollbar border-r-2 border-black"
           id="chat-window"
         >
           {chatLog.map((chatmsg, index) => {
@@ -176,7 +188,7 @@ const Chat: React.FC<Iprops> = () => {
           })}
         </div>
       </div>
-      <div className="bg-gray-900 w-9/12 rounded-b-xl ">
+      <div className="bg-elokint-black w-9/12 rounded-b-xl border-2 border-black">
         <form
           id="chat-form"
           onSubmit={handleSubmit}
@@ -192,7 +204,7 @@ const Chat: React.FC<Iprops> = () => {
           />
 
           <button
-            className=" bg-yellow-500 text-white font-bold font-body  rounded-md px-4 py-2 uppercase text-sm hover:bg-yellow-600 flex items-center space-x-1 transition duration-300 ease-in-out"
+            className=" bg-yellow-500 text-white focus:outline-none font-bold font-body  rounded-md px-4 py-2 uppercase text-sm hover:bg-yellow-600 flex items-center space-x-1 transition duration-300 ease-in-out"
             type="submit"
           >
             <svg
