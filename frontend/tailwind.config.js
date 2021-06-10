@@ -9,6 +9,10 @@ module.exports = {
         body: ["Poppins"],
         elokint: ["Cinzel"],
       },
+      colors: {
+        "elokint-black": "#23272A",
+        "elokint-light-black": "#2C2F33",
+      },
     },
   },
   variants: {
