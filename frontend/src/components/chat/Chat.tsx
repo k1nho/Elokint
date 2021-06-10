@@ -171,7 +171,7 @@ const Chat: React.FC<Iprops> = () => {
                 {user === chatmsg.username ? (
                   <MessageBubble
                     username={chatmsg.username}
-                    color="bg-green-600"
+                    color="bg-gray-700"
                     message={chatmsg.message}
                     date={chatmsg.date}
                   />

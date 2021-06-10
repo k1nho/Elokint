@@ -18,9 +18,9 @@ const MessageBubble: React.FC<Iprops> = ({
       <p
         className={`${color} rounded-l-md rounded-tr-md text-sm  text-white p-2 flex flex-col w-full`}
       >
-        <span className="text-md text-gray-700 font-bold">{username}</span>
+        <span className="text-md  font-bold">{username}</span>
         <span>{message}</span>
-        <span className="text-xs self-end text-white">{date}</span>
+        <span className="text-xs self-end">{date}</span>
       </p>
     </div>
   );
