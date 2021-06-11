@@ -7,7 +7,7 @@ interface Iprops {
   color: string;
 }
 
-const MessageBubble: React.FC<Iprops> = ({
+export const MessageBubble: React.FC<Iprops> = ({
   username,
   color,
   message,
@@ -25,5 +25,3 @@ const MessageBubble: React.FC<Iprops> = ({
     </div>
   );
 };
-
-export default MessageBubble;

@@ -12,7 +12,7 @@ interface RegisterUser {
   password: string;
 }
 
-const Register: React.FC<Iprops> = ({ authSetter }) => {
+export const Register: React.FC<Iprops> = ({ authSetter }) => {
   const [inputs, setInputs] = useState<RegisterUser>({
     username: "",
     email: "",
@@ -269,5 +269,3 @@ const Register: React.FC<Iprops> = ({ authSetter }) => {
     </div>
   );
 };
-
-export default Register;

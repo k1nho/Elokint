@@ -6,7 +6,7 @@ interface Iprops {
   logout: () => void;
 }
 
-const NavBar: React.FC<Iprops> = ({ isAuth, logout }) => {
+export const NavBar: React.FC<Iprops> = ({ isAuth, logout }) => {
   let navLeft;
   if (!isAuth) {
     navLeft = (
@@ -39,7 +39,7 @@ const NavBar: React.FC<Iprops> = ({ isAuth, logout }) => {
   }
 
   return (
-    <div className="bg-black sticky top-0 z-50">
+    <div className="bg-elokint-black sticky top-0 z-50">
       <div className="flex justify-between md:justify-around mx-auto w-10/12 py-4 text-white items-center">
         <h1 className="text-2xl md:text-4xl font-elokint hover:text-yellow-500 transition duration-200 cursor-pointer focus:text-yellow-500 focus:outline-none tracking-wider">
           <Link to="/">Elokint</Link>
@@ -73,5 +73,3 @@ const NavBar: React.FC<Iprops> = ({ isAuth, logout }) => {
     </div>
   );
 };
-
-export default NavBar;

@@ -11,7 +11,7 @@ interface User {
   password: string;
 }
 
-const Login: React.FC<Iprops> = ({ authSetter }) => {
+export const Login: React.FC<Iprops> = ({ authSetter }) => {
   const [inputs, setInputs] = useState<User>({
     email: "",
     password: "",
@@ -111,5 +111,3 @@ const Login: React.FC<Iprops> = ({ authSetter }) => {
     </div>
   );
 };
-
-export default Login;
