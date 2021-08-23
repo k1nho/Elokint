@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import io from "socket.io-client";
-import MessageBubble from "./MessageBubble";
+import {MessageBubble} from "./MessageBubble";
 
 const socket = io("http://localhost:4000", { transports: ["websocket"] });
 
