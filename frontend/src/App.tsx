@@ -8,11 +8,11 @@ import {
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Chat from "./components/chat/Chat";
-import Friendslist from "./components/Friendslist";
-import Home from "./components/Home";
-import NavBar from "./components/NavBar";
-import Login from "./components/userAuth/Login";
-import Register from "./components/userAuth/Register";
+import {Friendslist} from "./components/Friendslist";
+import {Home} from "./components/Home";
+import {NavBar} from "./components/NavBar";
+import {Login} from "./components/userAuth/Login";
+import {Register} from "./components/userAuth/Register";
 
 toast.configure();
 
