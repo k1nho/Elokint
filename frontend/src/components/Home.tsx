@@ -29,7 +29,11 @@ export const Home: React.FC = () => {
 </div>
     <div className="min-h-screen flex justify-items items-center">
       <div className="w-full flex items-center justify-center"> 
-      Description of service      
+        <p className ="text-2xl">
+          <span className = "text-4xl font-bold">Spontaneous Conversations</span>
+          <br />
+          The Elokint mode in the chat window allows to complete your thoughs for funny reactions!
+        </p>
       </div>
       <div className= "w-full  flex items-center justify-center">
 
