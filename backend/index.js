@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const jwt = require("jsonwebtoken");
 const cors = require("cors");
 const http = require("http");
 const server = http.createServer(app);
@@ -22,13 +23,24 @@ app.use("/dashboard", require("./routes/dashboard"));
 // SOCKET
 corsOptions = {
   cors: true,
-  origins: ["http://localhost:3000"],
+  origins: ["http://localhost:3000/chat"],
 };
 const io = new Server(server, corsOptions);
 const bot = "Kint";
 
 // client connection on IO instance
-io.on("connection", (socket) => {
+io.use((socket, next) => {
+  const jwtToken = socket.handshake.auth.jwtToken.token;
+  if (jwtToken) {
+    jwt.verify(jwtToken, process.env.jwtsecret, (err, decoded) => {
+      if (err) return next(new Error("Authentication Error"));
+      socket.decoded = decoded;
+      next();
+    });
+  } else {
+    next(new Error("Authentication error"));
+  }
+}).on("connection", (socket) => {
   socket.emit("message", formatMessage(bot, "Welcome to Elokint"));
   // broadcast an user connection (avoid the notification for the user connecting)
   socket.broadcast.emit("message", formatMessage(bot, "User has joined"));
