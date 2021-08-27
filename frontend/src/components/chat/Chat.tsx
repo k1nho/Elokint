@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import io from "socket.io-client";
-import MessageBubble from "./MessageBubble";
-
-const socket = io("http://localhost:4000", { transports: ["websocket"] });
+import { MessageBubble } from "./MessageBubble";
 
 interface Message {
   username: string;
@@ -15,10 +13,11 @@ interface Iprops {
   authSetter: (isUserAuth: boolean) => void;
 }
 
-const Chat: React.FC<Iprops> = () => {
+export const Chat: React.FC<Iprops> = () => {
   const [message, setMessage] = useState("");
   const [chatLog, setChatLog] = useState<Message[]>([]);
   const [user, setUser] = useState("");
+  const socket = useRef<any>(null);
 
   const getUser = async () => {
     try {
@@ -42,6 +41,19 @@ const Chat: React.FC<Iprops> = () => {
     }
   }, []);
 
+  // set socket connection once with socket on render
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      socket.current = io("http://localhost:4000", {
+        transports: ["websocket"],
+        auth: {
+          jwtToken: { token },
+        },
+      });
+    }
+  }, []);
+
   // save chatLog on localstorage
   useEffect(() => {
     localStorage.setItem("chat-history", JSON.stringify(chatLog));
@@ -59,11 +71,11 @@ const Chat: React.FC<Iprops> = () => {
 
   useEffect(() => {
     // catch server message on login
-    socket.on("message", (message) => {
+    socket.current.on("message", (message: Message) => {
       handleMessage(message);
     });
     return () => {
-      socket.off("message");
+      socket.current.off("message");
     };
   }, []);
 
@@ -71,7 +83,7 @@ const Chat: React.FC<Iprops> = () => {
     e.preventDefault();
     //send chat message of an user to the server
     if (message !== "") {
-      socket.emit("chatMessage", message, user);
+      socket.current.emit("chatMessage", message, user);
       setMessage("");
     }
   };
@@ -228,5 +240,3 @@ const Chat: React.FC<Iprops> = () => {
     </div>
   );
 };
-
-export default Chat;
