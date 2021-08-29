@@ -25,15 +25,18 @@ export const Home: React.FC = () => {
         </div>
       </div>
       <div className="min-h-screen flex justify-items items-center">
-        <div className="w-full flex items-center justify-center">
-          <p className="text-2xl">
-            <span className="text-4xl font-bold">
+        <div className="w-full space-y-4">
+          <div className="flex justify-center">
+            <p className="text-4xl font-bold flex self-center">
               Spontaneous Conversations
-            </span>
-            <br />
-            The Elokint mode in the chat window allows to complete your thoughs
-            for funny reactions!
-          </p>
+            </p>
+          </div>
+          <div className="ml-12">
+            <p className="text-2xl">
+              The Elokint mode in the chat window allows to complete your
+              thoughs for funny reactions!
+            </p>
+          </div>
         </div>
         <div className="w-full  flex items-center justify-center">
           <svg
