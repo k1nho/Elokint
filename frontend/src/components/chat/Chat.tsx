@@ -2,8 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import io from "socket.io-client";
 import { MessageBubble } from "./MessageBubble";
 
-const socket = io("http://localhost:4000", { transports: ["websocket"] });
-
 interface Message {
   username: string;
   message: string;
@@ -34,7 +32,7 @@ export const Chat: React.FC<Iprops> = () => {
     }
   };
 
-  // on first render get the user and chat history if needed
+  // on first render get the user and chat history if needed (beta testing --> improve with PostgreSQL schema)
   useEffect(() => {
     getUser();
     const chatHistory = localStorage.getItem("chat-history");
