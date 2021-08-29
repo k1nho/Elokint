@@ -26,7 +26,7 @@ corsOptions = {
   origins: ["http://localhost:3000/chat"],
 };
 const io = new Server(server, corsOptions);
-const bot = "Kint";
+const bot = "Kint Bot";
 
 // client connection on IO instance
 io.use((socket, next) => {
