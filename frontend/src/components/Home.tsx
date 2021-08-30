@@ -19,7 +19,7 @@ export const Home: React.FC = () => {
           </div>
           <div className="text-xl font-body" >
               Elokint is a messaging app that uses autocompletion to finish your
-              sentences try it with your friends and family and have fun!
+              sentences !
           </div>
         </div>
       </div>
@@ -30,7 +30,7 @@ export const Home: React.FC = () => {
           </div>
           <div className="text-xl font-body">
               The Elokint mode in the chat window allows to complete your
-              thoughs for funny reactions!
+              thoughs for funny reactions !
           </div>
         </div>
         <div className="w-full flex items-center justify-center">
@@ -485,7 +485,7 @@ export const Home: React.FC = () => {
               Connect with family and friends !
           </div>
           <div className="text-xl font-body">
-              Enjoy the friend list system to keep in touch with your 
+              Enjoy the friend list system to keep in touch with your close ones 
           </div>
         </div>
       </div>
