@@ -15,9 +15,7 @@ export const Home: React.FC = () => {
         </div>
         <div className="w-full space-y-2">
           <div className="flex justify-start">
-            <p className="text-4xl font-bold">
-              Want to become more eloquent or not ?
-            </p>
+            <p className="text-4xl font-bold">Want to become more eloquent ?</p>
           </div>
           <div className="mr-12">
             <p className="text-2xl">
@@ -177,7 +175,7 @@ export const Home: React.FC = () => {
           </svg>
         </div>
       </div>
-      <div className="min-h-screen flex justify-items items-center">
+      <div className="min-h-screen flex justify-items items-center bg-gradient-to-tr from-gray-700 via-gray-900 to-black">
         <div className="w-full flex items-center justify-center">
           <svg
             id="eda1a55b-53a8-43b5-9383-13f99c95cdad"
@@ -488,8 +486,17 @@ export const Home: React.FC = () => {
             <circle cx="243.80241" cy="196.40268" r="1.69602" fill="#fff" />
           </svg>
         </div>
-        <div className="w-full flex items-center justify-center">
-          This is description of the project
+        <div className="w-full space-y-2 text-white">
+          <div className="flex justify-start">
+            <p className="text-4xl font-bold">
+              Connect with family and friends !
+            </p>
+          </div>
+          <div className="mr-12">
+            <p className="text-2xl">
+              Enjoy the friend list system to interact with your people
+            </p>
+          </div>
         </div>
       </div>
     </div>
