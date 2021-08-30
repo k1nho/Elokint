@@ -50,7 +50,7 @@ export const Login: React.FC<Iprops> = ({ authSetter }) => {
 
   return (
     <div className="grid grid-rows-1 w-full h-full bg-gradient-to-tr from-gray-700 via-gray-900 to-black">
-      <div className="flex m-auto flex-col p-6 gap-5 bg-transparent sm:rounded-8 z-10 sm:w-400 w-full items-center mt-24 mb-24">
+      <div className="flex m-auto flex-col p-6 gap-5 bg-transparent sm:rounded-8 z-10 sm:w-400 w-full items-center md:mt-52 md:mb-48 mt-20 mb-24">
         <div className="space-y-8 bg-gray-800 rounded  p-8 md:p-12 md:w-96">
           <div className="flex gap-2 flex-col items-center text-yellow-500">
             <span className="text-3xl text-primary-100 font-bold">Welcome</span>
@@ -106,7 +106,6 @@ export const Login: React.FC<Iprops> = ({ authSetter }) => {
           </div>
         </div>
       </div>
-      
     </div>
   );
 };
