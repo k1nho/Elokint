@@ -172,7 +172,7 @@ export const Home: React.FC = () => {
         </svg>  
             </div>
     </div>
-    <div className= "min-h-screeb flex justify-items items-center">
+    <div className= "min-h-screen flex justify-items items-center">
       <div>This is svg</div>
       <div>This is description of the project</div>
     </div>
