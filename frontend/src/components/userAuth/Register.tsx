@@ -52,9 +52,8 @@ export const Register: React.FC<Iprops> = ({ authSetter }) => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-900">
-     
-      <div className="flex m-auto flex-col p-3  md:p-6  bg-gray-900 sm:rounded-8 z-10 sm:w-400 w-full items-center">
+    <div className="min-h-screen flex flex-col bg-gradient-to-tr from-gray-700 via-gray-900 to-black">
+      <div className="flex m-auto flex-col p-3  md:p-6  bg-transparent sm:rounded-8 z-10 sm:w-400 w-full items-center">
         <div className="space-y-8 bg-gray-800 rounded p-12">
           <div className="flex gap-2 flex-col items-center text-yellow-500">
             <span className="text-3xl text-primary-100 font-bold">Welcome</span>
