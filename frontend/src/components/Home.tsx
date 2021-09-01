@@ -3,7 +3,7 @@ import React from "react";
 export const Home: React.FC = () => {
   return (
     <div className="min-h-screen flex-col justify-items">
-      <div className="min-h-screen flex justify-center items-center bg-gradient-to-tl from-yellow-200 to-yellow-500">
+      <div className="min-h-screen md:flex justify-center items-center bg-gradient-to-tl from-yellow-200 to-yellow-500">
         <div className="w-full flex items-center justify-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -23,7 +23,7 @@ export const Home: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="min-h-screen flex justify-items items-center">
+      <div className="min-h-screen  md:flex justify-items items-center">
         <div className="w-full md:space-y-2 flex-col items-center justify-center text-left p-12">
           <div className="text-4xl font-bold font-elokint">
               Spontaneous Conversations
@@ -169,7 +169,7 @@ export const Home: React.FC = () => {
         </svg>  
             </div>
     </div>
-      <div className="min-h-screen flex justify-items items-center bg-gradient-to-tr from-gray-700 via-gray-900 to-black">
+      <div className="min-h-screen  md:flex justify-items items-center bg-gradient-to-tr from-gray-700 via-gray-900 to-black">
         <div className="w-full flex items-center justify-center">
           <svg
             id="eda1a55b-53a8-43b5-9383-13f99c95cdad"
