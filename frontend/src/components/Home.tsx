@@ -3,7 +3,7 @@ import React from "react";
 export const Home: React.FC = () => {
   return (
     <div className="min-h-screen flex-col justify-items">
-      <div className="min-h-screen md:flex justify-center items-center bg-gradient-to-tl from-yellow-200 to-yellow-500">
+      <div className="min-h-screen md:flex justify-items items-center bg-gradient-to-tl from-yellow-200 to-yellow-500">
         <div className="w-full flex items-center justify-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -14,10 +14,10 @@ export const Home: React.FC = () => {
           </svg>
         </div>
         <div className="w-full space-y-2 flex-col justify-center items-center text-left">
-          <div className=" text-4xl font-bold font-elokint">
+          <div className=" text-2xl md:text-4xl font-bold font-elokint">
             Want to become more eloquent ?
           </div>
-          <div className="text-xl font-body" >
+          <div className="  text-base md:text-xl font-body" >
               Elokint is a messaging app that uses autocompletion to finish your
               sentences !
           </div>
@@ -25,10 +25,10 @@ export const Home: React.FC = () => {
       </div>
       <div className="min-h-screen  md:flex justify-items items-center">
         <div className="w-full md:space-y-2 flex-col items-center justify-center text-left p-12">
-          <div className="text-4xl font-bold font-elokint">
+          <div className=" text-2xl md:text-4xl font-bold font-elokint">
               Spontaneous Conversations
           </div>
-          <div className="text-xl font-body">
+          <div className="text-base md:text-xl font-body">
               The Elokint mode in the chat window allows to complete your
               thoughs for funny reactions !
           </div>
@@ -480,11 +480,11 @@ export const Home: React.FC = () => {
             <circle cx="243.80241" cy="196.40268" r="1.69602" fill="#fff" />
           </svg>
         </div>
-        <div className="w-full space-y-2 text-white flex-col justify-center items-center text-left">
-          <div className="text-4xl font-bold font-elokint ">
+        <div className="w-full  space-y-4 md:space-y-2 text-white flex-col justify-center items-center text-left">
+          <div className=" text-2xl md:text-4xl font-bold font-elokint ">
               Connect with family and friends !
           </div>
-          <div className="text-xl font-body">
+          <div className="text-base md:text-xl font-body">
               Enjoy the friend list system to keep in touch with your close ones 
           </div>
         </div>
