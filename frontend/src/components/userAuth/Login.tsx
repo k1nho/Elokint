@@ -43,7 +43,7 @@ export const Login: React.FC<Iprops> = ({ authSetter }) => {
         authSetter(false);
         toast.error(parseResponse);
       }
-    } catch (err) {
+    } catch (err: any) {
       console.error(err.message);
     }
   };
