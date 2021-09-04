@@ -41,18 +41,18 @@ io.use((socket, next) => {
     next(new Error("Authentication error"));
   }
 }).on("connection", (socket) => {
-  socket.emit("message", formatMessage(bot, "Welcome to Elokint"));
+  socket.emit("message", formatMessage(bot, "Welcome to Elokint", ""));
   // broadcast an user connection (avoid the notification for the user connecting)
-  socket.broadcast.emit("message", formatMessage(bot, "User has joined"));
+  socket.broadcast.emit("message", formatMessage(bot, "User has joined", ""));
 
-  socket.on("chatMessage", (msg, user) => {
+  socket.on("chatMessage", (msg, user, elokintAuto) => {
     //catch chat message from client and send to all other clients
-    io.emit("message", formatMessage(user, msg));
+    io.emit("message", formatMessage(user, msg, elokintAuto));
 
     // check for disconnects
     socket.on("disconnect", () => {
       // send message to all the clients when an user disconnects
-      io.emit("message", formatMessage(bot, "User left the chat"));
+      io.emit("message", formatMessage(bot, "User left the chat", ""));
     });
   });
 });
