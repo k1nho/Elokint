@@ -87,17 +87,22 @@ export const Chat: React.FC<Iprops> = () => {
       if (elokintMode) {
         // handle autocompletion
 
+        //get query string
+        const wordsArray = message.split(" ");
+        const autoCompleteWord = wordsArray[wordsArray.length - 1];
+        let elokintMsg = "";
+
         const autoComplete = await fetch(
-          "https://api.datamuse.com/words?rel_trg=cow"
+          `https://api.datamuse.com/words?rel_trg=${autoCompleteWord}`
         );
         const parseAutoComplete = await autoComplete.json();
 
-        socket.current.emit(
-          "chatMessage",
-          message,
-          user,
-          parseAutoComplete[0].word
-        );
+        // check for no match words
+        if (parseAutoComplete.length !== 0) {
+          elokintMsg = parseAutoComplete[0].word;
+        }
+
+        socket.current.emit("chatMessage", message, user, elokintMsg);
       } else {
         socket.current.emit("chatMessage", message, user, "");
       }
