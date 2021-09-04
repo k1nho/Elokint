@@ -92,9 +92,14 @@ export const Chat: React.FC<Iprops> = () => {
         );
         const parseAutoComplete = await autoComplete.json();
 
-        socket.current.emit("chatMessage", parseAutoComplete[0].word, user);
+        socket.current.emit(
+          "chatMessage",
+          message,
+          user,
+          parseAutoComplete[0].word
+        );
       } else {
-        socket.current.emit("chatMessage", message, user);
+        socket.current.emit("chatMessage", message, user, "");
       }
       setMessage("");
     }
