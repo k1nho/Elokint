@@ -14,12 +14,13 @@ export const Home: React.FC = () => {
           </svg>
         </div>
         <div className="w-full  space-y-4 md:space-y-2 flex-col justify-center items-center text-center md:text-left">
-          <div className=" text-2xl md:text-4xl font-bold font-elokint">
-            Want to become more eloquent ?
+          <div className="text-2xl md:text-4xl font-bold font-elokint">
+            Want to become more eloquent or not ?
           </div>
-          <div className="  text-base md:text-xl font-body">
-            Elokint is a messaging app that uses autocompletion to finish your
-            sentences !
+          <div className="text-base md:text-xl font-body w-4/5">
+            Elokint is a messaging app &#128172; that uses Datamuse API to
+            autocomplete and finish your sentences with an odd meaning. Explore
+            conversations in a random setting !
           </div>
         </div>
       </div>
@@ -29,8 +30,8 @@ export const Home: React.FC = () => {
             Spontaneous Conversations
           </div>
           <div className="text-base md:text-xl font-body">
-            The Elokint mode in the chat window allows to complete your thoughs
-            for funny reactions !
+            Activate the Elokint mode &#128526; in the chat window to complete
+            your thoughs for funny reactions &#128514; !
           </div>
         </div>
         <div className="w-full flex items-center justify-center">
