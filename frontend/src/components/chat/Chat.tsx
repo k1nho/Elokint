@@ -55,7 +55,7 @@ export const Chat: React.FC<Iprops> = () => {
     }
   }, []);
 
-  // save chatLog on localstorage
+  // save chatLog on localstorage (simple test)
   useEffect(() => {
     localStorage.setItem("chat-history", JSON.stringify(chatLog));
   });
@@ -80,14 +80,19 @@ export const Chat: React.FC<Iprops> = () => {
     };
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     //send chat message of an user to the server
     if (message !== "") {
-      // handle autocompletion
       if (elokintMode) {
-        console.log("On elokint mode");
-        socket.current.emit("chatMessage", message, user);
+        // handle autocompletion
+
+        const autoComplete = await fetch(
+          "https://api.datamuse.com/words?rel_trg=cow"
+        );
+        const parseAutoComplete = await autoComplete.json();
+
+        socket.current.emit("chatMessage", parseAutoComplete[0].word, user);
       } else {
         socket.current.emit("chatMessage", message, user);
       }
