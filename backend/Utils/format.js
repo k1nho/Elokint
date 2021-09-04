@@ -1,9 +1,13 @@
 const moment = require("moment");
 
-function formatMessage(username, msg) {
+function formatMessage(username, msg, elokintAuto) {
+  let userMessage = msg;
+  if (elokintAuto !== "") {
+    userMessage = msg + " " + elokintAuto;
+  }
   return {
     username: username,
-    message: msg,
+    message: userMessage,
     date: moment().format("h:mm a"),
   };
 }
