@@ -486,7 +486,8 @@ export const Home: React.FC = () => {
             Connect with family and friends !
           </div>
           <div className="text-base md:text-xl font-body">
-            Enjoy the friend list system to keep in touch with your close ones
+            The friend list system organizes your mutual connections, so that
+            you do not miss the next time a Elokint conversation is started !
           </div>
         </div>
       </div>
