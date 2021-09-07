@@ -13,24 +13,24 @@ export const Home: React.FC = () => {
             <path d="M17.944 5c-1.138 0-2.376.129-3.394.491-2.283.828-2.792.838-5.103 0-1.015-.362-2.256-.491-3.392-.491-1.971 0-4.17.387-6.055.878v1.789c.847.255 1.068.627 1.203 1.493.381 2.443 1.255 4.84 5.068 4.84 3.037 0 4.051-2.259 4.722-4.345.341-1.06 1.663-1.087 2.009-.015.673 2.089 1.682 4.36 4.725 4.36 3.814 0 4.689-2.397 5.069-4.841.135-.866.356-1.237 1.204-1.492v-1.789c-1.887-.491-4.085-.878-6.056-.878zm-7.682 3.814c-.518 2.174-1.36 4.186-3.991 4.186-3.301 0-3.974-1.903-4.275-4.973-.072-.747.092-1.04.221-1.195.947-1.134 5.952-1.088 7.611-.092.475.285.783.601.434 2.074zm11.74-.787c-.301 3.07-.975 4.973-4.275 4.973-2.629 0-3.472-2.012-3.989-4.186-.351-1.473-.042-1.789.434-2.074 1.665-1 6.667-1.038 7.611.092.129.156.293.449.219 1.195zm-4.838-1.121c1.539-.234 3.318-.03 3.791.537.104.124.234.358.176.956-.031.316-.067.616-.112.9-.41-1.487-1.457-2.283-3.855-2.393zm-14.184 2.393c-.045-.284-.082-.584-.113-.9-.058-.598.073-.832.177-.956.474-.567 2.253-.771 3.792-.537-2.398.11-3.445.906-3.856 2.393zm16.02 7.764c-1.15 2.869-6.031 2.166-7 .369-.97 1.797-5.85 2.5-7-.369.578.506 1.565.669 2.318.559 2.22-.325 2.042-2.423 3.594-2.423.425 0 .81.177 1.088.464.278-.287.662-.464 1.087-.464 1.552 0 1.375 2.099 3.594 2.423.753.11 1.74-.053 2.319-.559z" />
           </svg>
         </div>
-        <div className="w-full  space-y-4 md:space-y-2 flex-col justify-center items-center text-center md:text-left">
-          <div className="text-2xl md:text-4xl font-bold font-elokint">
+        <div className="w-full  space-y-4 md:space-y-4 flex-col justify-center items-center text-center md:text-left">
+          <div className="text-2xl md:text-3xl font-bold font-elokint">
             Want to become more eloquent or not ?
           </div>
-          <div className="text-base md:text-xl font-body w-4/5">
-            Elokint is a messaging app &#128172; that uses Datamuse API to
-            autocomplete and finish your sentences with an odd meaning. Explore
-            conversations in a random setting !
+          <div className="text-base md:text-lg font-body w-11/12 text-justify text-elokint-light-black">
+            Elokint is a messaging app &#128172; that uses Datamuse API to autocomplete
+           and finish your sentences with an odd meaning. Explore
+            conversations in way never before a random setting !
           </div>
         </div>
       </div>
       <div className="min-h-screen  md:flex justify-items items-center">
-        <div className="w-full space-y-4 md:space-y-2 flex-col items-center justify-center  text-center md:text-left p-12">
-          <div className=" text-2xl md:text-4xl font-bold font-elokint">
+        <div className="w-full space-y-4 md:space-y-4 flex-col items-center justify-center  text-center md:text-left p-12">
+          <div className=" text-2xl md:text-3xl font-bold font-elokint">
             Spontaneous Conversations
           </div>
-          <div className="text-base md:text-xl font-body">
-            Activate the Elokint mode &#128526; in the chat window to complete
+          <div className="text-base md:text-lg font-body text-elokint-light-black">
+             Having a hard time coming up with brand new topics? activate the Elokint mode &#128526; in the chat window to complete
             your thoughs for funny reactions &#128514; !
           </div>
         </div>
@@ -481,11 +481,11 @@ export const Home: React.FC = () => {
             <circle cx="243.80241" cy="196.40268" r="1.69602" fill="#fff" />
           </svg>
         </div>
-        <div className="w-full  space-y-4 md:space-y-2 text-white flex-col justify-center items-center  text-center md:text-left">
-          <div className=" text-2xl md:text-4xl font-bold font-elokint ">
+        <div className="w-full  space-y-4 md:space-y-4 text-white flex-col justify-center items-center  text-center md:text-left">
+          <div className=" text-2xl md:text-3xl font-bold font-elokint ">
             Connect with family and friends !
           </div>
-          <div className="text-base md:text-xl font-body">
+          <div className="text-base md:text-lg font-body w-11/12">
             The friend list system organizes your mutual connections, so that
             you do not miss the next time a Elokint conversation is started !
           </div>
