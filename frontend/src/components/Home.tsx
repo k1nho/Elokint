@@ -14,24 +14,24 @@ export const Home: React.FC = () => {
           </svg>
         </div>
         <div className="w-full  space-y-4 md:space-y-4 flex-col justify-center items-center text-center md:text-left">
-          <div className="text-2xl md:text-3xl font-bold font-elokint">
+          <div className="text-2xl md:text-3xl font-bold font-elokint tracking-wider">
             Want to become more eloquent or not ?
           </div>
           <div className="text-base md:text-lg font-body w-11/12 text-justify text-elokint-light-black">
             Elokint is a messaging app &#128172; that uses Datamuse API to autocomplete
            and finish your sentences with an odd meaning. Explore
-            conversations in way never before a random setting !
+            conversations in way never before by getting out of your comfort zone and chatting with random people in totally random coversations.
           </div>
         </div>
       </div>
       <div className="min-h-screen  md:flex justify-items items-center">
         <div className="w-full space-y-4 md:space-y-4 flex-col items-center justify-center  text-center md:text-left p-12">
-          <div className=" text-2xl md:text-3xl font-bold font-elokint">
+          <div className=" text-2xl md:text-3xl font-bold font-elokint tracking-wider">
             Spontaneous Conversations
           </div>
-          <div className="text-base md:text-lg font-body text-elokint-light-black">
-             Having a hard time coming up with brand new topics? activate the Elokint mode &#128526; in the chat window to complete
-            your thoughs for funny reactions &#128514; !
+          <div className="text-base md:text-lg font-body text-elokint-light-black text-justify">
+             Having a hard time coming up with brand new topics? let Kint bot take care of it by activating the Elokint mode &#128526; in the chat window your frozen thoughs will complete
+            automatically creating unexpected sentences and spreading positive and funny reactions &#128514; !
           </div>
         </div>
         <div className="w-full flex items-center justify-center">
@@ -482,12 +482,12 @@ export const Home: React.FC = () => {
           </svg>
         </div>
         <div className="w-full  space-y-4 md:space-y-4 text-white flex-col justify-center items-center  text-center md:text-left">
-          <div className=" text-2xl md:text-3xl font-bold font-elokint ">
-            Connect with family and friends !
+          <div className=" text-2xl md:text-3xl font-bold font-elokint tracking-wider ">
+            Connect with family and friends
           </div>
-          <div className="text-base md:text-lg font-body w-11/12">
-            The friend list system organizes your mutual connections, so that
-            you do not miss the next time a Elokint conversation is started !
+          <div className="text-base md:text-lg font-body w-11/12 text-justify">
+            The friend list system organizes your mutual connections, so that you can stay globally connected 🌐
+            and not miss the next time a mutual Elokint conversation is started !
           </div>
         </div>
       </div>
