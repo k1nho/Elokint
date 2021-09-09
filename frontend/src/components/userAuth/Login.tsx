@@ -49,7 +49,11 @@ export const Login: React.FC<Iprops> = ({ authSetter }) => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-tr from-gray-700 via-gray-900 to-black">
+    <div className="min-h-screen flex flex-col bg-gradient-to-tr from-gray-700 via-gray-900 to-black relative overflow-hidden">
+      <div className= "hidden md:block bg-yellow-500  rounded-md h-20 w-96 transform  translate-y-8 skew-x-12 -rotate-45 absolute right-3 top-3"></div>
+      <div className= "hidden md:block bg-yellow-500  rounded-md h-20 w-96 transform  translate-y-8 skew-x-12 -rotate-45 absolute left-3 top-3"></div>
+      <div className= "hidden md:block bg-yellow-500  rounded-md h-20 w-96 transform  -translate-y-10 skew-x-12 -rotate-45 absolute left-1 bottom-4"></div>
+      <div className= "hidden md:block bg-yellow-500  rounded-md h-20 w-96 transform -translate-y-10 skew-x-12 -rotate-45 absolute right-1 bottom-4"></div>
       <div className="flex m-auto flex-col p-3  md:p-6 bg-transparent sm:rounded-8 z-10 sm:w-400 w-full items-center">
         <div className="space-y-8 bg-gray-800 rounded  p-8 md:p-12 md:w-96">
           <div className="flex gap-2 flex-col items-center text-yellow-500">

@@ -12,12 +12,18 @@ export const Friendslist: React.FC<Iprops> = () =>
   let status : string[] = ["bg-red-500", "bg-green-500" , "bg-green-500" , "bg-yellow-400"]
   let descriptions : string[] = ["Looking for a particular 🐭" ,"Trolling 🐱's for days" , "Learning how to become the avatar 🍃🌊🔥" , "Want to have an elokencious conversation 😈"]
   return (
-    <div className="min-h-screen bg-elokint-light-black flex flex-col space-y-4 items-center justify-center">
-      <div className= "text-4xl font-elokint  font-bold tracking-wider text-yellow-500">
+    <div className="min-h-screen bg-elokint-light-black flex flex-col space-y-4 items-center justify-center relative overflow-hidden">
+      {/* BG customization */}
+      <div className= "hidden md:block bg-yellow-500  rounded-md h-20 w-96 transform  translate-y-8 skew-x-12 -rotate-45 absolute right-3 top-3"></div>
+      <div className= "hidden md:block bg-yellow-500  rounded-md h-20 w-96 transform  translate-y-8 skew-x-12 -rotate-45 absolute left-3 top-3"></div>
+      <div className= "hidden md:block bg-yellow-500  rounded-md h-20 w-96 transform  -translate-y-10 skew-x-12 -rotate-45 absolute left-1 bottom-4"></div>
+      <div className= "hidden md:block bg-yellow-500  rounded-md h-20 w-96 transform -translate-y-10 skew-x-12 -rotate-45 absolute right-1 bottom-4"></div>
+      
+      <div className= "text-4xl font-elokint  font-bold tracking-wider text-yellow-500 z-10">
       Friends List
       </div>
       {/* Friends log section  */}
-      <div className ="flex flex-col items-center justify-items space-y-4 bg-white rounded-md p-5">
+      <div className ="flex flex-col items-center justify-items space-y-4 bg-white rounded-md p-5 z-10">
         {friends.map((friend, i)=> {
           return(
           <div key = {i} className=" flex items-center bg-white rounded w-full h-24 shadow-lg p-5">
