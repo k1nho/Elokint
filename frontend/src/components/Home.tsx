@@ -17,10 +17,11 @@ export const Home: React.FC = () => {
           <div className="text-2xl md:text-3xl font-bold font-elokint tracking-wider">
             Want to become more eloquent or not ?
           </div>
-          <div className="text-base md:text-lg font-body w-11/12 text-justify text-elokint-light-black">
-            Elokint is a messaging app &#128172; that uses Datamuse API to autocomplete
-           and finish your sentences with an odd meaning. Explore
-            conversations in way never before by getting out of your comfort zone and chatting with random people in totally random coversations.
+          <div className="text-base md:text-lg font-body xl:w-10/12 text-justify text-elokint-light-black">
+            Elokint is a messaging app &#128172; that uses Datamuse API to
+            autocomplete and finish your sentences with an odd meaning. Explore
+            conversations in way never before by getting out of your comfort
+            zone and chatting with random people in totally random coversations.
           </div>
         </div>
       </div>
@@ -29,9 +30,12 @@ export const Home: React.FC = () => {
           <div className=" text-2xl md:text-3xl font-bold font-elokint tracking-wider">
             Spontaneous Conversations
           </div>
-          <div className="text-base md:text-lg font-body text-elokint-light-black text-justify">
-             Having a hard time coming up with brand new topics? let Kint bot take care of it by activating the Elokint mode &#128526; in the chat window your frozen thoughs will complete
-            automatically creating unexpected sentences and spreading positive and funny reactions &#128514; !
+          <div className="text-base md:text-lg xl:w-10/12 font-body text-elokint-light-black text-justify">
+            Having a hard time coming up with brand new topics? let Kint bot
+            take care of it by activating the Elokint mode &#128526; in the chat
+            window your frozen thoughs will complete automatically creating
+            unexpected sentences and spreading positive and funny reactions
+            &#128514; !
           </div>
         </div>
         <div className="w-full flex items-center justify-center">
@@ -39,8 +43,8 @@ export const Home: React.FC = () => {
             id="b8020534-692f-4fc4-9d5d-3e879dc4a63f"
             data-name="Layer 1"
             xmlns="http://www.w3.org/2000/svg"
-            width="500"
-            height="500"
+            width="600"
+            height="600"
             viewBox="0 0 771.02756 547.52978"
           >
             <path
@@ -485,9 +489,10 @@ export const Home: React.FC = () => {
           <div className=" text-2xl md:text-3xl font-bold font-elokint tracking-wider ">
             Connect with family and friends
           </div>
-          <div className="text-base md:text-lg font-body w-11/12 text-justify">
-            The friend list system organizes your mutual connections, so that you can stay globally connected 🌐
-            and not miss the next time a mutual Elokint conversation is started !
+          <div className="text-base md:text-lg xl:w-10/12 font-body w-11/12 text-justify">
+            The friend list system organizes your mutual connections, so that
+            you can stay globally connected 🌐 and not miss the next time a
+            mutual Elokint conversation is started !
           </div>
         </div>
       </div>
